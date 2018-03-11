@@ -59,3 +59,68 @@ int factorial(int x)
 	}
 
 }
+
+
+PyObject * pAdd(PyObject *self, PyObject *args) 
+{
+	int num1, num2;
+	if(!PyArg_ParseTuple(args, "ii", &num1, &num2))
+		return NULL;
+	return Py_BuildValue("i", add(num1,num2));
+}
+
+PyObject * pSub(PyObject *self, PyObject *args) 
+{
+	int num1, num2;
+	if(!PyArg_ParseTuple(args, "ii", &num1, &num2))
+		return NULL;
+	return Py_BuildValue("i", sub(num1,num2));
+}
+
+PyObject * pMul(PyObject *self, PyObject *args) 
+{
+	int num1, num2;
+	if(!PyArg_ParseTuple(args, "ii", &num1, &num2))
+		return NULL;
+	return Py_BuildValue("i", mul(num1,num2));
+}
+
+PyObject * pDivide(PyObject *self, PyObject *args) 
+{
+	int num1, num2;
+	if(!PyArg_ParseTuple(args, "ii", &num1, &num2))
+		return NULL;
+	return Py_BuildValue("i", divide(num1,num2));
+}
+
+PyObject * pMod(PyObject *self, PyObject *args) 
+{
+	int num1, num2;
+	if(!PyArg_ParseTuple(args, "ii", &num1, &num2))
+		return NULL;
+	return Py_BuildValue("i", mod(num1,num2));
+}
+
+PyObject * PPower(PyObject *self, PyObject *args) 
+{
+	int num1, num2;
+	if(!PyArg_ParseTuple(args, "ii", &num1, &num2))
+		return NULL;
+	return Py_BuildValue("i", power(num1,num2));
+}
+
+PyObject * pSumofn(PyObject *self, PyObject *args) 
+{
+	int num1;
+	if(!PyArg_ParseTuple(args, "i", &num1))
+		return NULL;
+	return Py_BuildValue("i", sumofn(num1));
+}
+
+PyObject * pFactorial(PyObject *self, PyObject *args) 
+{
+	int num1;
+	if(!PyArg_ParseTuple(args, "i", &num1))
+		return NULL;
+	return Py_BuildValue("i", factorial(num1));
+}
